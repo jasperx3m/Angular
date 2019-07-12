@@ -1,0 +1,36 @@
+<div>
+    <h1>Add New Product</h1>
+
+<p>
+<label>Product Name</label>
+<input [(ngModel)]= "productName" />
+</p>
+<p>
+    <label>Product Code</label>
+    <input [(ngModel)]= "productCode" />
+</p>
+<p>
+    <label>Release Date</label>
+    <input [(ngModel)]= "releaseDate" />
+</p>
+<p>
+    <label>Description</label>
+    <input [(ngModel)]= "description" />
+</p>
+<p>
+        <label>Price</label>
+        <input [(ngModel)]= "price" />
+</p>
+<p>
+        <label>Star Rating</label>
+        <input [(ngModel)]= "starRating" />
+</p>
+<p>
+        <label>Image URL</label>
+        <input [(ngModel)]= "imageUrl" />
+</p>
+<button (click)='addNewProduct()'> Submit</button>
+
+
+
+</div>

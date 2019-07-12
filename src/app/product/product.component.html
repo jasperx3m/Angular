@@ -1,0 +1,45 @@
+<!-- <div>
+    <h2>{{product}}</h2>
+</div>
+<div class="row">
+    <div class="col-md-9"></div>
+    <div class="col-md-3"></div>
+</div> -->
+
+<h1>Products</h1>
+<input  [(ngModel)] = 'searchString'>
+<div class='table-responsive'>
+    <ng-container *ngIf="products && products.length; else noProducts">
+            <table >
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Product</th>
+                            <th>Code</th>
+                            <th>Available</th>
+                            <th>Price</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                        <tr *ngFor="let product of searchProduct()">          
+                                    <td><img *ngIf ='isVisible' [src]='product.imageUrl'></td>
+                                    <td>{{product.productName | uppercase}}</td>
+                                    <td>{{product.productCode}}</td>
+                                    <td>{{product.releaseDate | date }}</td>
+                                    <td>{{product.price | currency:'PHP' : 'symbol' : '1.2-2'}}</td>
+                                    <td>{{product.starRating}}</td>
+                        </tr>
+                    
+                </table>
+    </ng-container>
+    
+    <ng-template #noProducts>
+        No Products available
+    </ng-template>
+    <button (click)='toggleImage()'>
+        Show/ Hide Image
+    </button>
+    <input [(ngModel)]="searchString">
+    <h1>{{searchString}}</h1>
+    <add-product (onAddNewProduct)='addNewProduct($event)'></add-product>
+</div>
